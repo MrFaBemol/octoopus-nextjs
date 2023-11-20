@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
 const config: Config = {
   content: [
@@ -9,6 +10,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: colors.orange,
+      },
+      fontFamily: {
+        sans: ['Source', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+        cursive: ['Special Elite', 'cursive'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -18,7 +27,7 @@ const config: Config = {
   },
   plugins: [
       require("flowbite/plugin"),
-      // require("flowbite-react"),
+      // require("tailwindcss/nesting")(require('postcss-nested')),
   ],
 }
 export default config
